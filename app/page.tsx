@@ -1,5 +1,6 @@
 import About from "@/components/about/About";
 import Home from "@/components/home/Home";
+import Contact from "@/components/contact/Contact";
 
 import React from "react";
 
@@ -8,6 +9,8 @@ const page = () => {
     <div>
       <Home />
       <About />
+
+      <Contact />
     </div>
   );
 };

@@ -9,15 +9,30 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+import { Modal } from "antd";
+
 const dropdownItems: MenuProps["items"] = [
   { key: "/products", label: <Link href="/products">Products</Link> },
   { key: "/services", label: <Link href="/services">Services</Link> },
   { key: "/offers", label: <Link href="/offers">Offers</Link> },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname(); // ✅ সঠিক জায়গায়
+  const pathname = usePathname();
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const navItemClass = (path: string) =>
     `cursor-pointer ${
@@ -27,11 +42,24 @@ const Navbar = () => {
   return (
     <header className="w-full bg-gray-200 shadow-2xl sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Modal
+          title="Biswash Farmace"
+          closable={{ "aria-label": "Custom Close Button" }}
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <p className="text-md">NAME: MD ANIK IMRAN</p>
+          <p className="text-md">PHONE:01312171995</p>
+          <p className="text-md">GMAIL:mdanikimran17@gmail.com</p>
+        </Modal>
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={Logo} alt="Logo" width={45} height={45} />
           <h1 className="font-bold text-2xl">
-            <span className="text-red-600">Biswash</span>{" "}
+            <span className="text-red-600">
+              <span className="text-green-800">B</span>iswash
+            </span>{" "}
             <span className="text-blue-600">Farmace</span>
           </h1>
         </Link>
@@ -67,11 +95,15 @@ const Navbar = () => {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <Button>Get Started</Button>
-          <Link href="/login">
-            {" "}
-            <Button type="primary">Login</Button>
+          <Button onClick={showModal}>Get Started</Button>
+
+          <Link
+            href="/login"
+            className="border border-blue-600 bg-blue-600 px-2 p-1 rounded"
+          >
+            Login
           </Link>
+
           <Switch checkedChildren="🌙" unCheckedChildren="☀️" />
         </div>
 

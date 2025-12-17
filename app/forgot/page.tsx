@@ -1,9 +1,9 @@
 import React from "react";
-import Contact from "@/components/contact/Contact";
+import Forgot from "@/components/login/Forgot";
 const page = () => {
   return (
     <div>
-      <Contact />
+      <Forgot />
     </div>
   );
 };

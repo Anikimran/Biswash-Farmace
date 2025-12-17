@@ -34,6 +34,7 @@ export default function LoginPage() {
             <input
               type="email"
               placeholder="Enter your email"
+              required
               className="w-full pl-2 pr-3 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
@@ -46,6 +47,7 @@ export default function LoginPage() {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
+              required
               className="w-full pl-2 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <button

@@ -5,6 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Logo from "../../public/Screenshot 2025-12-16 124810.png";
 import { Button } from "antd";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -31,7 +32,10 @@ const Home = () => {
               </p>
 
               <div className="flex gap-5 text-black mt-6">
-                <Button type="primary">Get Started</Button>
+                <Link href="/cart">
+                  {" "}
+                  <Button type="primary">Get Started</Button>
+                </Link>
                 <Button>Learn More</Button>
               </div>
             </motion.div>
