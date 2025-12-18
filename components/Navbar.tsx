@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Drawer */}
       <Drawer
         title="Menu"
-        placement="right"
+        placement="left"
         open={open}
         onClose={() => setOpen(false)}
         closeIcon={<X />}
