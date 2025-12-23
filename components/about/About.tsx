@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Logo from "../../public/young-female-pharmacist-giving-prescription-260nw-2106885479.jpg";
@@ -68,6 +69,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      <div></div>
     </section>
   );
 };

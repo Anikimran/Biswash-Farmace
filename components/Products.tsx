@@ -116,7 +116,7 @@ const data = [
   "  ",
 ];
 
-export default function Page() {
+export default function Products() {
   const [query, setQuery] = useState("");
 
   const filteredData = data.filter((item) =>

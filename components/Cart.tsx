@@ -144,19 +144,19 @@ function Card({
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="h-screen sticky top-0 flex items-center justify-center pb-36 max-w-7xl mx-auto">
+    <div className="  h-screen sticky top-0 flex items-center justify-center pb-36 max-w-7xl mx-auto">
       <motion.div
         style={{
           scale,
           backgroundColor: color,
           top: `calc(-12vh + ${i * 18}px)`,
         }}
-        className="relative -top-[25%] h-[300px] max-w-[50%]
+        className="relative -top-[25%] h-[300px] max-w-[50%] mx-auto
         p-10 rounded-3xl origin-top
         bg-gradient-to-tr from-black via-gray-900 to-amber-900/40
         border border-white/10 shadow-xl flex flex-col justify-end"
       >
-        <div className="hidden md:flex absolute top-10 left-20 p-3 rounded-2xl bg-white/10 border border-white/20">
+        <div className="hidden md:flex absolute top-10 left-20 p-3 rounded-2xl bg-white/10 border border-white/20 p-10 ">
           {icon}
         </div>
 

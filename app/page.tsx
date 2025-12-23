@@ -3,6 +3,7 @@ import Home from "@/components/home/Home";
 import Contact from "@/components/contact/Contact";
 
 import React from "react";
+import Products from "@/components/Products";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
       <About />
 
       <Contact />
+      <Products />
     </div>
   );
 };
